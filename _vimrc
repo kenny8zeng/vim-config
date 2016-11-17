@@ -138,6 +138,7 @@ Bundle 'ZoomWin'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rdnetto/YCM-Generator'
 Bundle 'scrooloose/syntastic'
+Bundle 'http://github.com/ternjs/tern_for_vim.git'
 
 " Bundle 'Align'
 " Bundle 'tpope/vim-surround'
