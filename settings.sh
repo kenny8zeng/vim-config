@@ -46,17 +46,21 @@ install_ycm()
 #-----------------------------------------------------------------
 set_vim_link()
 {
-	[ -L ~/.vim-using ]  && rm -f ~/.vim-using
-	[ -L ~/.vim ]        && rm -f ~/.vim
-	[ -f ~/.viminfo ]    && rm -f ~/.viminfo
-	[ -L ~/.viminfo ]    && rm -f ~/.viminfo
-	[ -L ~/.vimrc ]      && rm -f ~/.vimrc
+	cd $HOME
 
-	ln -s ~/.vim-config ~/.vim-using
+	mv $1 $HOME/.vim-config
 
-	ln -s ~/.vim-using/vimfiles  ~/.vim
-	ln -s ~/.vim-using/_viminfo  ~/.viminfo
-	ln -s ~/.vim-using/_vimrc    ~/.vimrc
+	[ -L $HOME/.vim-using ]  && rm -f $HOME/.vim-using
+	[ -L $HOME/.vim ]        && rm -f $HOME/.vim
+	[ -f $HOME/.viminfo ]    && rm -f $HOME/.viminfo
+	[ -L $HOME/.viminfo ]    && rm -f $HOME/.viminfo
+	[ -L $HOME/.vimrc ]      && rm -f $HOME/.vimrc
+
+	ln -s $HOME/.vim-config $HOME/.vim-using
+
+	ln -s $HOME/.vim-using/vimfiles  $HOME/.vim
+	ln -s $HOME/.vim-using/_viminfo  $HOME/.viminfo
+	ln -s $HOME/.vim-using/_vimrc    $HOME/.vimrc
 }
 
 #-----------------------------------------------------------------
@@ -72,14 +76,14 @@ main()
 	local start_path="$PWD"
 	local bundle_path="$HOME/.vim/bundle"
 
-	set_vim_link
+	set_vim_link $start_path
 
 	install_depend
 	install_vundle $bundle_path
-	install_ycm $bundle_path
+	#install_ycm $bundle_path
 	install_tfv $bundle_path
 
-	cd $start_path
+	cd $HOME
 
 	echo 'done'
 }

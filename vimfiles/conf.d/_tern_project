@@ -1,0 +1,14 @@
+{
+	"libs": [
+		"browser",
+		"underscore",
+		"jquery"
+		"express"
+		"socket.io"
+		"mongoose"
+		"http"
+	],
+	"plugins": {
+		"node": {}
+	}
+}
