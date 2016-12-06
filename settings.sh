@@ -68,6 +68,7 @@ help_usage()
 {
 	echo 'please do:'
 	echo '  1. do vim command in vim: BundleInstall'
+	echo "  2. run command in $HOME/.vim/bundle/YouCompleteMe: ./install.sh --clang-completer"
 }
 
 #-----------------------------------------------------------------
